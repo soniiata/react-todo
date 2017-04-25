@@ -1,14 +1,14 @@
 var React = require('react');
 
 var TodoSearch = React.createClass({
-  hendleSearch: function(){
+  handleSearch: function () {
     var showCompleted = this.refs.showCompleted.checked;
     var searchText = this.refs.searchText.value;
 
     this.props.onSearch(showCompleted, searchText);
   },
-  render: function(){
-    return(
+  render: function () {
+    return (
       <div>
         <div>
           <input type="search" ref="searchText" placeholder="Search todos" onChange={this.handleSearch}/>
@@ -24,4 +24,4 @@ var TodoSearch = React.createClass({
   }
 });
 
-module.exports = TodoSearch ;
+module.exports = TodoSearch;
