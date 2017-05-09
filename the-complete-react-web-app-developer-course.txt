@@ -1,0 +1,1 @@
+https://www.udemy.com/api-2.0/quizzes/225712/assessments?fields[assessment]=@all&page_size=250

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>001 React Basics Quiz</title>
+    </head>
+    <body>
+
+        <div style="background-color:#ffffaa" align = "center">
+            <script>
+                var c = '';
+                var opt = '';
+                var n = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+                var quiz = {"count": 6, "next": null, "previous": null, "results": [{"_class": "assessment", "id": 847008, "assessment_type": "multiple-choice", "created": "2016-02-16T19:05:18Z", "prompt": {"relatedLectureIds": "", "feedbacks": ["", "", ""], "question": "<p>What are React props used for?</p>", "answers": ["Keeping track of data that changes in a component", "Initializing a component with data", "Responding to user input & click events"]}, "correct_response": ["b"], "updated": "2016-02-18T12:48:25Z", "section": "", "question_plain": "What are React props used for?", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 847012, "assessment_type": "multiple-choice", "created": "2016-02-16T19:06:59Z", "prompt": {"relatedLectureIds": "", "feedbacks": ["", ""], "question": "<p>What is React state used for?</p>", "answers": ["Keeping track of data that changes in a component", "Initializing a component with data"]}, "correct_response": ["a"], "updated": "2016-02-18T12:48:18Z", "section": "", "question_plain": "What is React state used for?", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 847016, "assessment_type": "multiple-choice", "created": "2016-02-16T19:09:26Z", "prompt": {"relatedLectureIds": "", "feedbacks": ["", "", ""], "question": "<p>What is a presentational component?</p>", "answers": ["A component that uses state to display information", "A component that uses props to display information", "A component that only renders child components"]}, "correct_response": ["b"], "updated": "2016-02-16T19:09:37Z", "section": "", "question_plain": "What is a presentational component?", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 847018, "assessment_type": "multiple-choice", "created": "2016-02-16T19:11:22Z", "prompt": {"relatedLectureIds": "", "feedbacks": ["", ""], "question": "<p>What is a container component?</p>", "answers": ["A component that maintains state & renders child components", "A component that uses props to render HTML elements"]}, "correct_response": ["a"], "updated": "2016-02-16T19:11:22Z", "section": "", "question_plain": "What is a container component?", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 847024, "assessment_type": "multiple-choice", "created": "2016-02-16T19:15:07Z", "prompt": {"relatedLectureIds": "", "feedbacks": ["", "", ""], "question": "<p>How would you set a components \"name\" state to \"John\"?</p>", "answers": ["this.state.name = 'John'", "this.setState({name: 'John'});", "this.state('name', 'John')"]}, "correct_response": ["b"], "updated": "2016-02-18T12:47:23Z", "section": "", "question_plain": "How would you set a components \"name\" state to \"John\"?", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 847028, "assessment_type": "multiple-choice", "created": "2016-02-16T19:16:49Z", "prompt": {"relatedLectureIds": "", "feedbacks": ["", "", ""], "question": "<p>How would you pass the \"age\" variable as a property to the \"Person\" component?</p>", "answers": ["&lt;person age={age}/&gt;", "&lt;Person age=&quot;age&quot;/&gt;", "&lt;Person age={age}/&gt;"]}, "correct_response": ["c"], "updated": "2016-04-18T23:48:42Z", "section": "", "question_plain": "How would you pass the \"age\" variable as a property to the \"Person\" component?", "related_lectures": [], "original_assessment_id": 0}]};
+
+                for (var i = 0; i < quiz.results.length; i++) {
+
+                    var question = '<font color="ff0000"><br><h3>Question-' + i + ': </h3> <b>' + quiz.results[i].prompt.question + '</b> <br>';
+
+                    for (var j = 0; j < quiz.results[i].prompt.answers.length; j++) {
+
+                        opt = opt.concat(quiz.results[i].prompt.answers[j] ? '<p style="cursor: pointer" onclick="this.style=\'font-weight: bold; color: #CE534D\'">' + n[j] + ': ' + quiz.results[i].prompt.answers[j].toString().replace(/,/g, '<br>') + '</p>' : '<br>');
+                    }
+                    var ans = quiz.results[i].correct_response ? '<p> <br> <input style="cursor: pointer" type="button" onclick="this.value=\'Answer is: ' + quiz.results[i].correct_response.toString() + '\'" value="Show Answer"></input> </p>' : '<br>';
+                    c = c.concat(question, opt, ans);
+                    opt = ''
+                    }
+                document.write(c);
+            </script>
+        </div>
+    </body>
+    </html>
