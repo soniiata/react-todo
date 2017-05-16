@@ -26,22 +26,24 @@ export var todosReducer = (state=[], action) => {
         ...state,
         action.todo
       ];
-      case 'UPDATE_TODO':
-        return state.map((todo) => {
-          if (todo.id === action.id) {
-            return {
-              ...todo,
-              ...action.updates
-            };
-          } else {
-            return todo;
-          }
-        });
-      case 'ADD_TODOS':
-        return [
-          ...state,
-          ...action.todos
-        ];
+    case 'UPDATE_TODO':
+      return state.map((todo) => {
+        if (todo.id === action.id) {
+          return {
+            ...todo,
+            ...action.updates
+          };
+        } else {
+          return todo;
+        }
+      });
+    case 'ADD_TODOS':
+      return [
+        ...state,
+        ...action.todos
+      ];
+    case 'LOGOUT':
+      return [];
     default:
       return state;
   }
